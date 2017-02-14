@@ -1,0 +1,21 @@
+<script src="../lib/tracery.js"></script>
+<script src="../lib/mousetrap.min.js"></script>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<h1>I don't even know</h1>
+<button onclick="generate()">Generate</button>
+<script>
+var grammarObj = {
+	"origin": ["Sometimes when I'm #state#, I start thinking about stuff. Like, does #celebrity# ever #activity#? Do #animal# think about #things#? If #things# were able to think and move, would they #activity#? If #celebrity were to be an animal, would they be a #animal#? I'm sane I swear."],
+	"state": ["drunk", "high", "fucked up", "tripping on acid", "wasted", "sleep-deprived", "depressed", "stoned", "baked", "lit af", "puking", "running on fumes"],
+	"celebrity": ["Angelina Jolie", "Brad Pitt", "Ryan Reynolds", "Emma Stone", "Ryan Gosling", "Scarlett Johansson", "Beyoncé", "Adele", "Kanye West", "Chance the Rapper", "Young Thug", "Dave Chapelle", "Kate McKinnon", "Leslie Jones", ""],
+	"activity": ["play golf", "walk on the beach", "tag friends in memes", "binge watch netflix", "eat an entire tub of ice cream", "smoke weed", "go to zumba classes", "do yoga", "drink boxed wine"],
+	"animal": ["dogs", "platypus", "cats", "horses", "sea lions", "penguins", "bats", "wolves", "lions", "tapirs", "sharks", "sea otter", "dolphin", "sloths"],
+	"things": ["hamburgers", "cars", "bicycles", "the Internet", "backpacks", "computers", "iPhones", "vinyl records", "overpriced clothing", "feminism", "veganism", "paleo diets", "anti-vax movement", "Dom Perignon", "dank weed", "fibre supplements", "Air Jordans"]
+}
+var grammar = tracery.createGrammar(grammarObj)
+function generate(){
+	var t = grammar.flatten("#S#");
+	$('h1').text(t);
+}
+</script>
+
