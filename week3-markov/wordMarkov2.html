@@ -2,7 +2,7 @@
 <script src="../lib/markov.js"></script>
 <script>
 var txt;
-var markov = new MarkovGeneratorWord(8,100)
+var markov = new MarkovGeneratorWord(5,100)
 $.get("rockyhorror.txt", function(text) {
      markov.feed(text);
 });
